@@ -2,177 +2,123 @@
 
 
 @font-face {
-    font-family:'CenturySchoolbook';
-    src: url('font/CenturySchoolbook');
-    src: url('font/CenturySchoolbook.eot?#iefix') format('embedded-opentype'),
-        url('font/CenturySchoolbook.ttf') format('truetype'),
-        url('font/CenturySchoolbook.svg#Century Schoolbook') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family:'CenturySchoolbook';
+  src: url('font/CenturySchoolbook');
+  src: url('font/CenturySchoolbook.eot?#iefix') format('embedded-opentype'),
+      url('font/CenturySchoolbook.ttf') format('truetype'),
+      url('font/CenturySchoolbook.svg#Century Schoolbook') format('svg');
+  font-weight: normal;
+  font-style: normal;
 
 }
 
 @font-face {
-    font-family:'CenturySchoolbook-bold';
-    src: url('font/CenturySchoolbook-bold');
-    src: url('font/CenturySchoolbook-bold.eot?#iefix') format('embedded-opentype'),
-        url('font/CenturySchoolbook-bold.ttf') format('truetype'),
-        url('font/CenturySchoolbook-bold.svg#CenturySchoolbook-bold') format('svg');
-    font-weight: bold;
-    font-style: normal;
+  font-family:'CenturySchoolbook-bold';
+  src: url('font/CenturySchoolbook-bold');
+  src: url('font/CenturySchoolbook-bold.eot?#iefix') format('embedded-opentype'),
+      url('font/CenturySchoolbook-bold.ttf') format('truetype'),
+      url('font/CenturySchoolbook-bold.svg#CenturySchoolbook-bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
 
 }
+
+:root{
+--spacer: 2rem;
+--standard:2rem;
+}
+
+::-moz-selection { background: lightgrey; color: white ;}
+::selection { background: lightgrey; color: white ; }
 
 
 html {
-
-	font-family: 'CenturySchoolbook', Times, serif;
-    font-size: 1.1em;
-    letter-spacing: .070em;
-    word-spacing: 1em;
-    line-height: 1.2em;
-    font-weight: normal;
-    font-style: normal;
-    height: 100%;
-
-	background: rgb(255,255,255);
+background: rgb(255,255,255);
 }
 
-body {
+body{
 
-  }
-
-  ::-moz-selection {
-  background-color: #000000;
-  color: #ffffff;
-  }
-
-  ::selection {
-  background-color: #000000;
-  color: #ffffff;
+margin: var(--standard);
+margin-right: 6rem;
 }
 
-.heading{
-	font-family: 'CenturySchoolbook', Times, serif;
-		font-size: 1.2em;
-		letter-spacing: -.005em;
-		word-spacing: -0.001em;
-		line-height: 1.05em;
-		font-weight: normal;
-		font-style: normal;
-		height: 100%;
-		color: #000000;
 
-	float:left;
-	height:2%;
-	width:39%;
-	padding-left:1%;
-}
+p{
 
-.fulllength{
-  font-family: 'CenturySchoolbook', Times, serif;
-    font-size: 1.2em;
-    letter-spacing: -.005em;
-    word-spacing: -0.001em;
-    line-height: 1.05em;
-    font-weight: normal;
-    font-style: normal;
-    height: 100%;
-    color: #000000;
+font-family: 'CenturySchoolbook', Times, serif;
+font-size: 4rem;
+font-weight: normal;
+font-style: normal;
+margin:0;
+letter-spacing: -0.05rem;
+word-spacing:-0.05rem;
 
-  float:left;
-  width:70%;
-  padding-left:1%;
-}
-
-b {
-  font-family: 'CenturySchoolbook-bold', Times, serif;
-  font-weight: bold;
+display:inline;
 
 }
 
-.indent{
-  text-indent : 1em;
-  text-decoration:none;
-
+hr{
+border: 3px solid #000000;
+margin-top: var(--spacer);
 }
 
 
 a {
-font-style: normal;
-text-decoration:underline;
-color: #000000;
-
-}
-
-
-a:hover {
-	font-style:normal;
-}
-
-a:visited {
-	font-style: normal;
-	text-decoration:underline;
-	color: #000000;
-}
-
-
-
-
-a.hidden {
 font-style: normal;
 text-decoration:none;
 color: #000000;
 
 }
 
-a.hidden:hover {
-	font-style:normal;
-  text-decoration: underline;
-  color: #000000;
+
+a:hover {
+font-style: normal;
+text-decoration:underline;
+color: #000000;
 }
 
 a:visited {
-	font-style: normal;
-	text-decoration: none;
-	color: #000000;
+font-style: normal;
+text-decoration:none;
+color: #000000;
 }
 
-.hover_img{
-  font-family: 'CenturySchoolbook', Times, serif;
-    font-size: 1.2em;
-    letter-spacing: .005em;
-    word-spacing: 0.05em;
-    line-height: 1.0em;
-    font-weight: normal;
-    font-style: normal;
-    height: 100%;
-    color: #000000;
-
-  float:left;
-  width:95%;
-  padding-left:1%;
-}
-.hover_img a {
-  position:relative;
-  text-decoration: none;
- }
-.hover_img a span {
-  position:relative;
-  float:right;
-  display:none;
-  z-index:99; }
-
-.hover_img a:hover span { display:block; }
-
-
-.fading{
-  position: fixed;
-  top: 0%;
-  right: 0%;
-  opacity:0;
-  width: 80%;
-  height: 80%;
-  z-index: -10%;
+a.plain:hover{
+font-style: normal;
+text-decoration:none;
+color: #000000;
 
 }
+
+
+.text-box{
+width:auto;
+padding-right: 1rem;
+}
+
+.spacer{
+margin-bottom: var(--spacer);
+}
+
+.indent{
+margin-left:12vw;
+}
+
+.ghost {
+display:none;
+
+font-family: 'CenturySchoolbook', Times, serif;
+font-size: 4rem;
+font-weight: normal;
+font-style: normal;
+margin:0;
+letter-spacing: -0.05rem;
+word-spacing:-0.05rem;
+color:lightgrey;
+
+}
+
+div:hover .ghost{
+display: inline;
+}
+
