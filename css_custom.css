@@ -34,12 +34,21 @@
 
 html {
 background: rgb(255,255,255);
+
+
+
 }
 
 body{
 
-margin: var(--standard);
-margin-right: 6rem;
+display: grid;
+grid-template-rows: 1fr 6fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+margin: 0 !important;
+
+
+
 }
 
 
@@ -50,6 +59,7 @@ font-size: 4rem;
 font-weight: normal;
 font-style: normal;
 margin:0;
+
 letter-spacing: -0.05rem;
 word-spacing:-0.05rem;
 
@@ -90,10 +100,31 @@ color: #000000;
 
 }
 
+.header-box{
+grid-row: 1;
+  width: auto;
+  position: fixed;
+  background-color: #ffffff;
+  transition: filter 0.25s;
+  -webkit-transition: filter 0.25s;
+  margin: var(--standard);
+
+}
+
+/* for screens with height over 700px */
+.articles{
+grid-row: 2;
+padding-bottom: 20rem;
+background-color: white;
+z-index:100;
+
+}
+
 
 .text-box{
 width:auto;
 padding-right: 1rem;
+background-color: #ffffff;
 }
 
 .spacer{
@@ -104,8 +135,8 @@ margin-bottom: var(--spacer);
 margin-left:12vw;
 }
 
+
 .ghost {
-display:none;
 
 font-family: 'CenturySchoolbook', Times, serif;
 font-size: 4rem;
@@ -116,9 +147,13 @@ letter-spacing: -0.05rem;
 word-spacing:-0.05rem;
 color:lightgrey;
 
+display:none;
+
 }
 
-div:hover .ghost{
-display: inline;
+div.text-box:hover span.ghost{
+
+display:inline;
+
 }
 
