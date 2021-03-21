@@ -177,6 +177,8 @@ span.ghost{
   background: black; /* Gecko Browsers */
 }
 
+/*------- MEDIA QUERIES ---------*/
+
 /* for smaller desktop screens */
 @media only screen and (max-height: 768px) {
  

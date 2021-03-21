@@ -157,3 +157,190 @@
   }
   
   
+/*------- MEDIA QUERIES ---------*/
+
+/* for smaller desktop screens */
+@media only screen and (max-height: 768px) {
+ 
+  .articles{
+  
+    padding-bottom:20rem;
+  }
+
+ 
+}
+
+/* for iPad Pro */
+@media only screen 
+  and (width: 1024px) 
+  and (height: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  body {
+
+    display: grid;
+    display: grid;
+    grid-template-rows: 1fr 11fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+   }
+
+
+  p {
+    font-family: 'CenturySchoolbook', Times, serif;
+    font-size: 3.25rem;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+    letter-spacing: -0.05rem;
+    word-spacing: -0.05rem;
+    display: inline;
+  }
+
+
+  .articles {
+    grid-row: 2;
+    padding-bottom: 65rem !important;
+}
+
+
+.indent {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+
+}
+/* tablets and ipads*/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2){
+
+
+    body {
+      
+      display: grid;
+      display: grid;
+      grid-template-rows: 1fr 9fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+     }
+  
+  
+    p {
+      font-family: 'CenturySchoolbook', Times, serif;
+      font-size: 3.25rem;
+      font-weight: normal;
+      font-style: normal;
+      margin: 0;
+      letter-spacing: -0.05rem;
+      word-spacing: -0.05rem;
+      display: inline;
+    }
+
+    .header-box p > a {
+      font-style: normal;
+      text-decoration: underline;
+      color: #000000;
+  }
+  
+  
+    .articles {
+      grid-row: 2;
+      padding-bottom: 45rem !important;
+  }
+  
+  
+  .indent {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
+  span.ghost{
+    font-family: 'CenturySchoolbook', Times, serif;
+    font-size: 3.25rem !important;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+    letter-spacing: -0.05rem;
+    word-spacing: -0.05rem;
+    display: inline;
+    display:inline;
+  }
+
+
+}
+
+
+/* mobile phones*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 767px) 
+  { 
+
+
+    body{
+      grid-template-rows: 1fr 9fr !important;
+      margin: 1rem !important;
+     
+    }
+
+    .header-box{
+     
+     margin: 0 !important;
+    top: 10px !important;
+    padding-right: 1rem !important;
+    }
+
+    p {
+      font-family: 'CenturySchoolbook', Times, serif;
+      font-size: 1.75rem;
+      font-weight: normal;
+      font-style: normal;
+      margin: 0;
+      letter-spacing: -0.05rem;
+      word-spacing: -0.05rem;
+      display: inline;
+    }
+
+    .header-box p > a {
+      font-style: normal;
+      text-decoration: underline;
+      color: #000000;
+  }
+
+    .indent{
+      margin-left:0 !important;
+    }
+
+    span.ghost{
+      font-family: 'CenturySchoolbook', Times, serif;
+      font-size: 1.75rem !important;
+      font-weight: normal;
+      font-style: normal;
+      margin: 0;
+      letter-spacing: -0.05rem;
+      word-spacing: -0.05rem;
+      display: inline;
+      display:inline;
+    }
+
+
+
+  }
+
+
+  /* mobile phones*/
+@media only screen 
+and (width: 320px) 
+and (height: 568px) {
+
+  p {
+    font-family: 'CenturySchoolbook', Times, serif;
+    font-size: 1.5rem;
+}
+
+
+
+}
