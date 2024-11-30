@@ -26,9 +26,6 @@
 	"engines": {
 		"node": ">=18"
 	},
-	"bugs": {
-		"url": "https://github.com/11ty/eleventy-base-blog/issues"
-	},
 	"homepage": "https://susannah-jacob.github.io",
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0",
