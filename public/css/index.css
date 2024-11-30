@@ -1,6 +1,28 @@
 /* Defaults */
+
+@font-face {
+
+	font-family: 'TimesNewerRoman-Regular';
+	src: url('public/fonts/TimesNewerRoman-Regular.otf'); 
+	font-weight: normal;
+	font-style: normal;
+
+	font-family: 'TimesNewerRoman-Italic';
+	src: url('public/fonts/TimesNewerRoman-Italic.otf'); 
+	font-weight: normal;
+	font-style: italic;
+
+	font-family: 'TimesNewerRoman-Bold';
+	src: url('public/fonts/TimesNewerRoman-Bold.otf'); 
+	font-weight: normal;
+	font-style: bold;
+  
+  }
+
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family: "TimesNewerRoman-Regular" system-ui, serif;
+	--font-family-italic: "TimesNewerRoman-Italic";
+	--font-family-bold: "TimesNewerRoman-Bold";
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
@@ -8,16 +30,18 @@
 :root {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
+	--color-gray-50: #565555;
 	--color-gray-90: #333;
 
-	--background-color: #fff;
+	--background-color: #FFFFFC;
 
 	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+	--text-color-link: var(--color-gray-90);
+	--text-color-link-active: var(--color-gray-70);
+	--text-color-link-visited: var(--color-gray-90);
 
 	--syntax-tab-size: 2;
+	--standard-spacer: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,18 +71,29 @@
 
 html,
 body {
+	max-width: 100vw;
+	height: 100%;
 	padding: 0;
 	margin: 0 auto;
 	font-family: var(--font-family);
 	color: var(--text-color);
 	background-color: var(--background-color);
+	letter-spacing: 0.01rem;
 }
+
+body{
+	padding: var(--standard-spacer);
+}
+
 html {
 	overflow-y: scroll;
 }
-body {
-	max-width: 40em;
+
+.container {
+	display:flex;
+	flex-direction:column;
 }
+
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
@@ -88,7 +123,8 @@ p:last-child {
 	margin-bottom: 0;
 }
 p {
-	line-height: 1.5;
+	line-height: 1.25;
+	margin:0;
 }
 
 li {
@@ -106,17 +142,11 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
-main,
-footer {
-	padding: 1rem;
-}
 main :first-child {
 	margin-top: 0;
 }
 
-header {
-	border-bottom: 1px dashed var(--color-gray-20);
-}
+
 header:after {
 	content: "";
 	display: table;
@@ -170,46 +200,59 @@ code {
 	word-break: break-all;
 }
 
+figure{
+	margin:0;
+}
+
 /* Header */
 header {
 	display: flex;
-	gap: 1em .5em;
-	flex-wrap: wrap;
-	align-items: center;
-	padding: 1em;
+	flex-direction:column;
+	padding: calc(3* var(--standard-spacer)) 0;
+
+
 }
 .home-link {
 	font-size: 1em; /* 16px /16 */
-	font-weight: 700;
-	margin-right: 2em;
+	display:flex;
+
 }
-.home-link:link:not(:hover) {
+
+
+.home-link:link, .no-underline:link{
 	text-decoration: none;
 }
 
 /* Nav */
 .nav {
 	display: flex;
+	flex-direction: column;
 	padding: 0;
 	margin: 0;
 	list-style: none;
 }
 .nav-item {
-	display: inline-block;
-	margin-right: 1em;
+	margin-bottom: var(--standard-spacer);
 }
-.nav-item a[href]:not(:hover) {
+
+.nav-item a[href] {
 	text-decoration: none;
 }
+
+
 .nav a[href][aria-current="page"] {
-	text-decoration: underline;
+	text-decoration:underline;
+	text-underline-position: from-font;
+	text-underline-offset: 2px;
+	text-decoration-thickness: 1px;
+
 }
 
 /* Posts list */
 .postlist {
 	list-style: none;
 	padding: 0;
-	padding-left: 1.5rem;
+
 }
 .postlist-item {
 	display: flex;
@@ -218,6 +261,7 @@ header {
 	counter-increment: start-from -1;
 	margin-bottom: 1em;
 }
+
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
@@ -235,15 +279,16 @@ header {
 	word-spacing: -0.5px;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
-	font-weight: 700;
-	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
+	text-decoration:none;
+}
+
+.postlist-link .underline {
+	text-decoration:underline;
 	text-underline-position: from-font;
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
 }
+
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
@@ -256,6 +301,7 @@ header {
 	text-transform: capitalize;
 	font-style: italic;
 }
+
 .postlist-item > .post-tag {
 	align-self: center;
 }
@@ -273,3 +319,63 @@ header {
 	margin-right: 1em;
 }
 
+picture .about-pic {
+	display: block;
+}
+
+/* utility */
+
+.w-100{
+	width:100%;
+}
+
+.w-50{
+	width: 50%;
+}
+
+.mb-1 {
+	margin-bottom: var(--standard-spacer);
+}
+
+.mb-2 {
+	margin-bottom: calc(2*var(--standard-spacer));
+}
+
+.mb-3 {
+	margin-bottom: calc(3*var(--standard-spacer));
+}
+
+
+@media screen and (min-width: 960px) {
+
+	body{
+		padding: calc(3*var(--standard-spacer));
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.container {
+		height: 90%;
+		display:flex;
+		flex-direction:row;
+	}
+
+	.container > * {
+		flex-grow: 1;
+		width:100%;
+	}
+
+	header{
+	padding:0;
+	}
+
+	main{
+		padding-right: calc(5*var(--standard-spacer));
+	}
+
+	picture .about-pic {
+		width:50%;
+	}
+
+}
