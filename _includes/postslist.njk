@@ -1,0 +1,10 @@
+{%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
+<ol reversed class="postlist">
+{%- for post in postslist | reverse %}
+	
+		<a href="{{ post.data.url }}" class="postlist-link" target="blank">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.content }}</code>{% endif %}</a>
+		<p><i>{{ post.data.outlet }}</i></p>
+		
+<br>
+{%- endfor %}
+</ol>
